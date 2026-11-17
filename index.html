@@ -70,7 +70,7 @@ html,body{overflow-x:clip}
 .inside{background:linear-gradient(180deg,#fff,#fff3ec)}
 .hero-mock{width:100%;border-radius:16px;box-shadow:0 18px 40px #0003;margin-bottom:22px;display:block}
 .pages{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;-webkit-overflow-scrolling:touch}
-.pages figure{flex:0 0 62%;scroll-snap-align:center;margin:0;cursor:zoom-in}
+.pages figure{flex:0 0 62%;scroll-snap-align:center;margin:0}
 .pages.small figure{flex-basis:46%}
 .pages img{width:100%;border-radius:10px;border:1px solid #eee;box-shadow:0 10px 24px #0002;display:block;transition:transform .25s}
 .pages figure:nth-child(odd) img{transform:rotate(-1.5deg)}.pages figure:nth-child(even) img{transform:rotate(1.5deg)}
@@ -295,7 +295,7 @@ const pv=document.querySelector('.plano.rec .val');let done=0;
 new IntersectionObserver(es=>{if(es[0].isIntersecting&&!done){done=1;const t0=performance.now();const f=t=>{const p=Math.min((t-t0)/900,1),v=47-(47-17.9)*(1-Math.pow(1-p,3));pv.textContent='R$ '+v.toFixed(2).replace('.',',');if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}},{threshold:.6}).observe(pv);
 // zoom nas prints
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
-document.querySelectorAll('.pages img,.hero-mock').forEach(i=>i.addEventListener('click',()=>{lbi.src=i.src;lbi.alt=i.alt;lb.classList.add('on')}));
+document.querySelectorAll('.hero-mock').forEach(i=>i.addEventListener('click',()=>{lbi.src=i.src;lbi.alt=i.alt;lb.classList.add('on')}));
 lb.addEventListener('click',()=>lb.classList.remove('on'));
 // barra de progresso
 const bar=document.getElementById('bar');addEventListener('scroll',()=>{bar.style.width=(scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%'},{passive:true});
