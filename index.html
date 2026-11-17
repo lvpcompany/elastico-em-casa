@@ -65,6 +65,26 @@ footer{text-align:center;font-size:.75rem;color:#777;padding:24px 18px 90px}
 .sticky.on{transform:none}
 .sticky .btn{margin:0;padding:12px 20px;font-size:.95rem;box-shadow:none}
 @media(min-width:760px){h1{font-size:2.5rem}}
+html,body{overflow-x:clip}
+/* ===== veja por dentro ===== */
+.inside{background:linear-gradient(180deg,#fff,#fff3ec)}
+.hero-mock{width:100%;border-radius:16px;box-shadow:0 18px 40px #0003;margin-bottom:22px;display:block}
+.pages{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;-webkit-overflow-scrolling:touch}
+.pages figure{flex:0 0 62%;scroll-snap-align:center;margin:0;cursor:zoom-in}
+.pages.small figure{flex-basis:46%}
+.pages img{width:100%;border-radius:10px;border:1px solid #eee;box-shadow:0 10px 24px #0002;display:block;transition:transform .25s}
+.pages figure:nth-child(odd) img{transform:rotate(-1.5deg)}.pages figure:nth-child(even) img{transform:rotate(1.5deg)}
+.pages figure:hover img{transform:rotate(0) scale(1.03)}
+.pages figcaption{font-size:.85rem;font-weight:700;text-align:center;margin-top:8px}
+.swipe{text-align:center;font-size:.8rem;color:#999}
+@media(min-width:760px){.pages figure{flex-basis:30%}.pages.small figure{flex-basis:30%}.swipe{display:none}}
+.extras{display:grid;gap:10px;margin:14px 0}
+.extras .ex{display:flex;gap:12px;align-items:center;background:#fff;border-radius:12px;padding:10px;box-shadow:0 4px 12px #0001}
+.extras img{width:96px;border-radius:8px;flex:none}
+.extras b{display:block}.extras span{display:block;font-size:.85rem;color:#555}.extras em{font-style:normal;font-weight:900;color:var(--c)}
+.lb{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+.lb.on{display:flex}.lb img{max-width:100%;max-height:90vh;border-radius:8px}
+.lb span{position:absolute;top:14px;right:18px;color:#fff;font-size:1.6rem;cursor:pointer}
 /* ===== animações ===== */
 html{scroll-behavior:smooth}
 .rv{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -163,14 +183,39 @@ html{scroll-behavior:smooth}
 <p style="margin-top:14px;font-size:.9rem;color:#555">Você recebe o PDF no e-mail logo após a compra e pode abrir no celular, no tablet ou imprimir.</p>
 </div></section>
 
+<section class="inside"><div class="w">
+<span class="tag">VEJA POR DENTRO</span>
+<h2>É isso que chega no seu e-mail</h2>
+<p style="margin-bottom:18px;color:#555">Prints reais do material. Toque em qualquer página para ver de perto.</p>
+<img class="hero-mock" src="img/capa-completo.jpg" alt="Elástico em Casa 30, plano completo com 3 níveis, no celular e em e-book" loading="lazy">
+<div class="pages">
+<figure><img src="img/p-metodo.jpg" alt="Página: como funciona o Método 3x5" loading="lazy"><figcaption>O Método 3x5 e os 3 níveis</figcaption></figure>
+<figure><img src="img/p-exercicios.jpg" alt="Página: os 12 exercícios com passo a passo" loading="lazy"><figcaption>12 exercícios com passo a passo</figcaption></figure>
+<figure><img src="img/p-calendario.jpg" alt="Página: calendário de treinos para marcar" loading="lazy"><figcaption>Calendário para marcar o X</figcaption></figure>
+<figure><img src="img/p-teste.jpg" alt="Página: teste de progresso do dia 1 e do dia 30" loading="lazy"><figcaption>Teste de progresso</figcaption></figure>
+<figure><img src="img/b-alongamento.jpg" alt="Página do bônus Alongamento de 5 minutos para dormir" loading="lazy"><figcaption>Bônus: alongamento de 5 min (Completo)</figcaption></figure>
+</div>
+<p class="swipe">← arraste para ver mais →</p>
+</div></section>
+
 <section><div class="w">
 <div class="bonus">
-<span class="tag">BÔNUS OPCIONAL NO CHECKOUT</span>
-<h2 style="margin-bottom:8px">Cardápio Proteico Barato</h2>
-<p>7 dias de refeições com 25 g ou mais de proteína por prato, feitas com ingredientes de mercado comum, e lista de compras pronta. Combina com o treino para você ter mais disposição.</p>
-<p class="p" style="margin-top:10px">Só + R$ 7,90 na hora da compra</p>
+<span class="tag">EXTRAS OPCIONAIS NO CHECKOUT</span>
+<h2 style="margin-bottom:8px">Turbine seu plano por poucos reais</h2>
+<p>Na hora da compra você pode adicionar, com 1 clique:</p>
+<div class="extras">
+<div class="ex"><img src="img/capa-cardapio.jpg" alt="Capa do Cardápio Proteico" loading="lazy"><div><b>Cardápio Proteico Barato</b><span>7 dias com 25 g+ de proteína e lista de compras</span><em>+ R$ 7,90</em></div></div>
+<div class="ex"><img src="img/capa-express.jpg" alt="Capa do Treino Express 7 min" loading="lazy"><div><b>Treino Express 7 min</b><span>10 treinos rápidos para os dias corridos</span><em>+ R$ 5,90</em></div></div>
+<div class="ex"><img src="img/capa-habitos.jpg" alt="Capa do Checklist de Hábitos" loading="lazy"><div><b>Checklist de Hábitos 30 Dias</b><span>Água, sono, passos, proteína e treino</span><em>+ R$ 5,00</em></div></div>
+</div>
+<div class="pages small">
+<figure><img src="img/b-cardapio.jpg" alt="Página do Cardápio Proteico" loading="lazy"><figcaption>Por dentro do Cardápio</figcaption></figure>
+<figure><img src="img/b-express.jpg" alt="Página do Treino Express" loading="lazy"><figcaption>Por dentro do Express</figcaption></figure>
+<figure><img src="img/b-habitos.jpg" alt="Página do Checklist de Hábitos" loading="lazy"><figcaption>Por dentro do Checklist</figcaption></figure>
+</div>
 </div>
 </div></section>
+<div class="lb" id="lb" aria-hidden="true"><img alt=""><span>✕</span></div>
 
 <section class="planos" id="planos"><div class="w">
 <h2 style="text-align:center">Escolha seu plano</h2>
@@ -248,6 +293,10 @@ document.querySelectorAll(sel).forEach(el=>io.observe(el));
 // contador de preço
 const pv=document.querySelector('.plano.rec .val');let done=0;
 new IntersectionObserver(es=>{if(es[0].isIntersecting&&!done){done=1;const t0=performance.now();const f=t=>{const p=Math.min((t-t0)/900,1),v=47-(47-17.9)*(1-Math.pow(1-p,3));pv.textContent='R$ '+v.toFixed(2).replace('.',',');if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}},{threshold:.6}).observe(pv);
+// zoom nas prints
+const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+document.querySelectorAll('.pages img,.hero-mock').forEach(i=>i.addEventListener('click',()=>{lbi.src=i.src;lbi.alt=i.alt;lb.classList.add('on')}));
+lb.addEventListener('click',()=>lb.classList.remove('on'));
 // barra de progresso
 const bar=document.getElementById('bar');addEventListener('scroll',()=>{bar.style.width=(scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%'},{passive:true});
 const st=document.getElementById('st'),pl=document.getElementById('planos');
