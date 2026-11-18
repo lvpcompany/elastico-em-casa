@@ -131,12 +131,15 @@ html{scroll-behavior:smooth}
 .count{font-variant-numeric:tabular-nums}
 .bar{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--c),var(--y));z-index:20;width:0}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.dor li,.hero h1 .word,.phone .day{opacity:1!important;transform:none!important}}
+.vsl{position:relative;margin:18px 0 22px;border-radius:18px;overflow:hidden;box-shadow:0 18px 44px #0004;background:#000;aspect-ratio:16/9}.vsl video{width:100%;height:100%;display:block;object-fit:cover}.vsl-t{text-align:center;font-weight:800;font-size:.95rem;color:var(--c);margin-top:6px}
 </style></head><body>
 
 <section class="hero"><div class="w">
 <span class="tag">MÉTODO 3x5 · 15 MIN POR DIA</span>
 <h1>Pare de pagar academia que você não vai. <span class="hl">Com 1 elástico e 15 min por dia</span>, você treina o corpo todo em casa.</h1>
 <p class="sub">Um plano de 30 dias pronto: abra o treino do dia, siga 3 blocos de 5 minutos e marque um X. Feito para quem nunca treinou ou parou faz tempo.</p>
+<p class="vsl-t">▶ Veja em 1:40 como funciona</p>
+<div class="vsl"><video id="vsl" controls playsinline preload="metadata" poster="img/vsl-poster.jpg"><source src="vsl.mp4" type="video/mp4">Seu navegador não reproduz vídeo.</video></div>
 <div class="phone"><div class="top">Elástico em Casa 30<small>Dia 6 · Treino X · Nível 1</small></div>
 <div class="day"><b>Bloco A · 5 min</b><br>Agachamento com band + Passada lateral</div>
 <div class="day"><b>Bloco B · 5 min</b><br>Remada sentada + Abertura de peito</div>
@@ -302,4 +305,6 @@ const bar=document.getElementById('bar');addEventListener('scroll',()=>{bar.styl
 const st=document.getElementById('st'),pl=document.getElementById('planos');
 addEventListener('scroll',()=>{const r=pl.getBoundingClientRect();st.classList.toggle('on',scrollY>500&&(r.top>innerHeight||r.bottom<0))},{passive:true});
 </script>
+
+<script>(function(){var v=document.getElementById('vsl');if(!v)return;var s=0,q=[25,50,75];v.addEventListener('play',function(){if(!s){s=1;try{fbq('trackCustom','VSLPlay')}catch(e){}}});v.addEventListener('timeupdate',function(){if(!v.duration)return;var p=v.currentTime/v.duration*100;while(q.length&&p>=q[0]){try{fbq('trackCustom','VSL'+q[0])}catch(e){}q.shift()}})})();</script>
 </body></html>
